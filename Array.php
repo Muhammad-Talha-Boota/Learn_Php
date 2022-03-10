@@ -1068,6 +1068,13 @@ $Emp = array(
     "Arbaz" => 33,
 );
 
+
+
+
+// They may go home when the work is done
+
+
+
 $new = array_change_key_case( $Emp, CASE_UPPER);
 
 echo "<pre>";
