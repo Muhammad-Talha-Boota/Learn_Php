@@ -52,13 +52,14 @@ for($l = 0; $l < 5 ; $l++){
 
 ###########   Associative Array    ###########
 
-
+/*
 $age = array(
     "bill" => 25.5,
     2 => "30",
     "elon" => 35
 
 );
+*/
 
 // Other Way For Loop in Scear Brakets
 
@@ -1075,8 +1076,106 @@ print_r($new);
 */
 
 
+############## Array_Sum & Array_Product Functions ##############
+
+/*
+//Array_Sum is Use For Sum All Intejer or Float value in a Array.
+
+$index = array(12,32,34,32.2,23.4,76,67.6);
+$Assoc = array(
+    "a" => 12,
+    "b" => 22,
+    "c" => 25.2,
+    "d" => 30.4,
+);
+
+// echo "<h1>" . "Sum is = " . array_sum($Assoc) .  "</h1>" ;
+
+//Array_Product is Use For Multiply All Integer or Float value in a Array.
+
+$index = array(12,32,34,32.2,23.4,76,67.6);
+$Assoc = array(
+    "a" => 12,
+    "b" => 22,
+    "c" => 25.2,
+    "d" => 30.4,
+);
+
+echo "<h1>" . "Prouct is  = " . array_product($Assoc) .  "</h1>" ;
+*/
 
 
+############## Array_rand & Array_shuffle Functions ##############
+
+
+/*
+// Array_rand function is use for have randome value of an array 
+
+$name = array("Ali",'khan',"Abdullah","Final_khan","Talha");
+
+$new = array_rand($name);
+
+echo "<pre>";
+print_r($new);
+
+// echo "<h1> The Rendome number and name here " . $name[$new][$new] . "</h1>";
+
+// Array_rand function is use for have randome value of an array And We Also Have More then One Redome Numbers With Second Parameter in Function
+
+$name = array("Ali",'khan',"Abdullah","Final_khan","Talha");
+
+$new = array_rand($name,4);
+
+echo "<pre>";
+print_r($new);
+
+echo "<h1> The Rendome number  " . $name[$new[0]] . "</h1>";
+echo "<h1> The Rendome number  " . $name[$new[1]] . "</h1>";
+echo "<h1> The Rendome number  " . $name[$new[2]] . "</h1>";
+echo "<h1> The Rendome number  " . $name[$new[3]] . "</h1>";
+
+// Array_rand For Associative Array
+
+$a1 = array("a" => "Final", "b" => "Last", "e" => "Final", "c" => "Last", "d" => "Gul", "e" => "Gul");
+
+$new = array_rand($a1,4);
+
+echo "<pre>";
+print_r($new);
+
+
+// shuffle function is use for Shuffle the value of an array its not Genrate a new Array its Shuffle the Exiting array 
+
+$name = array("Ali",'khan',"Abdullah","Final_khan","Talha");
+
+$a1 = array("a" => "Final",  "e" => "Final", "c" => "Last", "e" => "Gul");
+
+shuffle($a1);
+
+echo "<pre>";
+print_r($a1);
+*/
+
+
+############## Array_Fill & Array_Fill_Key Functions ##############
+
+// array_fill is use for create array with our given value and whith weare we start and the fixed value of whole array
+
+$array = array_fill(-3,4,"Final_khan");
+
+echo "<pre>";
+print_r($array);
+
+
+// array_fill_keys is use for create a new associati8ve array its Convert all Value Given in array into key and in this we Add A Fixed Value Unique
+
+// its Same For Index or Associative Array
+$test = array("a"=>"ali","b"=> "khan","c"=> "Ahmad","d"=> "Gul","e"=> "Faraz"); 
+
+$new = array_fill_keys($test,10);
+
+echo "<pre>";
+print_r($new);
 
 
 
