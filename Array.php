@@ -1159,6 +1159,7 @@ print_r($a1);
 
 ############## Array_Fill & Array_Fill_Key Functions ##############
 
+/*
 // array_fill is use for create array with our given value and whith weare we start and the fixed value of whole array
 
 $array = array_fill(-3,4,"Final_khan");
@@ -1176,7 +1177,143 @@ $new = array_fill_keys($test,10);
 
 echo "<pre>";
 print_r($new);
+*/
 
 
+############## Array_walk & Array_walk_recursive Functions ############
+
+/*
+echo "<h1>Array_Walk</h1>";
+
+// array_walk is use for Given Function for the value of associative array its not work for muktidimantional associative array if we want a fixed parameter then we have third value in Function
+
+$fruits = array(
+    "Ali" => "Khan",
+    "Ahmad" => "Ali",
+    "Usama" => "Boota",
+    "Hamza" => "Riaz",
+);
+
+array_walk($fruits,"myFunction","is the key of");
+
+function myFunction($value,$key,$para){
+    echo "$key $para $value  <br>";
+}
+
+echo "<h1>Array_Walk_recursive</h1>";
+
+// array_walk_recursive is use for Given Function for the value of Multidimantional associative array. if we want a fixed parameter then we have third value in Function
+
+$vegetable = array("1"=>"Carrot","2"=>"Tomato");
+
+$fruits = array(
+    $vegetable,
+    "Ali" => "Khan",
+    "Ahmad" => "Ali",
+    "Usama" => "Boota",
+    "Hamza" => "Riaz",
+);
+
+array_walk_recursive($fruits,"mulFunction","is the Key of");
+
+function mulFunction($value,$key,$para){
+    echo "$key $para $value  <br>";
+}
+*/
+
+############# Array_map Functions ############
+
+/*
+
+// array_map is use for Given Function for the value of associative array. This Function Genrate a new array and in this Function we Have More Then one Arrays.
+
+echo "<h1>Array Map</h1>";
+
+function square($n){
+    return $n * $n;
+}
+
+
+$a  = [1,2,3,4,5];
+
+$new = array_map('square',$a);
+
+echo "<pre>";
+print_r($new);
+
+// for two Parameters
+echo "<h1>For two Parameters</h1>";
+
+function Equal($n,$m){
+    return "$n is the Code For $m";
+}
+
+
+$a  = [1,2,3,4,5];
+
+$b = ["Lemon","Potato","Tomato","Genger","Chilli"];
+
+$new = array_map('Equal',$a,$b);
+
+echo "<pre>";
+print_r($new);
+
+// Function for Multidimantional Array 
+
+echo "<h1>Function For Multidimantional array</h1>";
+
+function Mul($n,$m){
+    return [$n  => $m]; //This Code For Mutidimantional Array
+}
+
+
+$a  = [1,2,3,4,5];
+
+$b = ["Lemon","Potato","Tomato","Genger","Chilli"];
+
+$new = array_map('Mul',$a,$b);
+
+echo "<pre>";
+print_r($new);
+
+// Function for Multidimantional Array 
+
+echo "<h1>Function For Multidimantional array with Null Function</h1>";
+
+
+function not($n,$m){
+    return [$n  => $m]; //This Code For Mutidimantional Array
+}
+
+
+$a  = [1,2,3,4,5];
+
+$b = ["Lemon","Potato","Tomato","Genger","Chilli"];
+
+$new = array_map(null,$a,$b); // If We Have null for Finction then its Give Associative Array
+
+echo "<pre>";
+print_r($new);
+
+/////// For Assiciative Array 
+
+echo "<h1>Array_map use For Associative Array</h1>";
+
+function Acc($n){
+    return strtoupper($n); //This Code For Change the case of Array
+}
+
+
+$a  = ["1"=>"Apple","2"=>"Banana","3"=>"lemon","4"=>"Mango"];
+
+$new = array_map("Acc",$a); 
+
+echo "<pre>";
+print_r($new);
+
+*/
+
+
+############# Array_Reduce Functions ############
 
 ?>
