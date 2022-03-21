@@ -1316,5 +1316,383 @@ print_r($new);
 
 ############# Array_Reduce Functions ############
 
+/*
+// array_reduce is use for have a single value of an array from a function
+
+function myFunction($n, $m)
+{  //The $n value Concatenate the first all Value
+    return $n . "-"  . $m;
+}
+
+$name = array("Talha", 'Usama', "Tahir", "Boota");
+
+$new = array_reduce($name, 'myFunction', 4);  //The third Value Is a Inetial value
+
+echo "<pre>";
+print_r($new);
+
+
+
+function mFunction($n, $m)
+{  //The $n value Concatenate the first all Value
+    $n += $m;
+    return $n;
+}
+
+$name = array(1, 2, 3, 4);
+
+$new = array_reduce($name, 'mFunction', 4);  //The third Value Is a Inetial value
+
+echo "<pre>";
+print_r($new);
+
+// In short its return all Vale in Single Value
+*/
+
+
+############# Array_Sorting Functions ############
+
+/* There are ten type of sorting function are as Follous
+
+1. sort  use for Index array
+2. rsort use for Index array
+3. arsort use for Associative array
+4. asort use for Associative array
+5. krsort use for Key Sorting array
+6. ksort use for Key Sorting array
+7. natcasesort use for sorting in natural sorting
+8. natsort use for sorting in natural sorting
+9. array_multisort  Use for sorting Multi arrays
+10. array_reverse use for Reverse sort */
+
+/*
+// sort() is use for sorting in asending order for index array
+$test = ["a","e","d","z","c","b"];
+
+sort($test);
+
+echo "<pre>";
+print_r($test);
+
+// sort() is use for sorting in Descending order for index array its Use For every Type of values
+$test = [22,34,54,12,11,10,9,0];
+
+rsort($test);
+
+echo "<pre>";
+print_r($test);
+
+
+// asort() is use for sorting in asending order for Associative array
+
+$vag = array(
+    "a" => "Lemon",
+    "c" => "Orange",
+    "b" => "Banana",
+    "e" => "Apple",
+);
+   
+asort($vag);
+
+echo "<pre>";
+print_r($vag);
+
+// arsort() is use for sorting in Descending order for Associative array
+
+$vag = array(
+    "a" => "Lemon",
+    "c" => "Orange",
+    "b" => "Banana",
+    "e" => "Apple",
+);
+   
+arsort($vag);
+
+echo "<pre>";
+print_r($vag);
+
+
+// ksort() is use for sorting in asending order for Key sorting
+
+$vag = array(
+    "a" => "Lemon",
+    "c" => "Orange",
+    "b" => "Banana",
+    "e" => "Apple",
+);
+   
+
+
+ksort($vag);
+
+echo "<pre>";
+print_r($vag);
+
+// krsort() is use for sorting in asending order for Key sorting
+
+$vag = array(
+    "a" => "Lemon",
+    "c" => "Orange",
+    "b" => "Banana",
+    "e" => "Apple",
+);
+   
+
+
+krsort($vag);
+
+echo "<pre>";
+print_r($vag);
+
+
+// natsort() is use for sorting in asending order in the inner of value 
+
+$path = array(
+    "img12.png",
+    "img2.png",
+    "img52.png",
+    "img22.png",
+    "img102.png"
+);
+
+natsort($path);
+
+echo "<pre>";
+print_r($path);
+
+// natsort() is use for sorting in asending order in inner of value with case 
+
+$path = array(
+    "img12.png",
+    "Img2.png",
+    "img52.png",
+    "img22.png",
+    "Img102.png"
+);
+
+natcasesort($path);
+
+echo "<pre>";
+print_r($path);
+
+
+// array_multi sort is use for sorting of Multiple Arrays its Work when all array Have Same Size Value
+
+$name = array("Talha", 'Usama', "Chand");
+$fruit = array("Carret","Banana","Apple");
+$veg = array("Lemon","Onian","Potato");
+
+array_multisort($name,$fruit,$veg);
+
+echo "<pre>";
+print_r($name);
+
+echo "<pre>";
+print_r($fruit);
+
+echo "<pre>";
+print_r($veg);
+
+
+// array_reverse Function is use for Reverse the array and its Return a New Array
+
+$chaw = array("kun","Food","Secreat","Zain","Khan");
+
+$new = array_reverse($chaw);
+
+echo "<pre>";
+print_r($new);
+*/
+
+
+############# Array : Traversing Functions ############
+
+/* There are Eight types of trsversing function are as follous
+
+1. Next
+2. Prev
+3. End
+4. Each
+5. Pos
+6. Current
+7. Key
+8. Reset */
+
+/*
+$name = array("Talha","usama","Rezwan","Awais");
+
+//current Function is use for current value of an array
+echo  "<b>Current is </b>" . current($name) . "<br>";
+
+//key Function is use for Find the key of Pointer value
+echo "<b>Key is </b>" . key($name) . "<br>";
+
+//Pos Function is Like Current
+echo "<b>Position is </b>" . Pos($name) . "<br>";
+
+next($name);
+echo "<b>Position is </b>" . Pos($name) . "<br>";
+
+prev($name);
+echo "<b>Position is </b>" . Pos($name) . "<br>";
+echo "<b>Key is </b>" . key($name) . "<br>";
+
+end($name);
+echo "<b>Position is </b>" . Pos($name) . "<br>";
+echo "<b>Key is </b>" . key($name) . "<br>";
+
+// each Function Return Both Key And Current/Position of value
+echo "<pre>";
+print_r(each($name));
+echo "</pre>";
+
+// Reset Function is use for Reset the current in an array
+
+reset($name);
+echo  "<b>Current is </b>" . current($name) . "<br>";
+*/
+
+
+############# Array : List Functions ############
+
+// list Function is use for store multiple value in Diffirent Strings and its Work for Index array and Associative array if key Given in Numerics
+
+/*
+// For Index Array
+$color = ["red", "Blue", "Green", "Yellow"];
+
+list($a, $b, $c, $d) = $color;
+
+echo "Value of A is : $a <br>";
+echo "Value of B is : $b <br>";
+echo "Value of C is : $c <br>";
+echo "Value of D is : $d <br><br><br>";
+
+// For Associative Array
+$color = [
+    "0" => "red",
+    "1" => "Blue",
+    "2" => "Green",
+    "3" => "Yellow"
+];
+
+list($a, $b, $c, $d) = $color;
+
+echo "Value of A is : $a <br>";
+echo "Value of B is : $b <br>";
+echo "Value of C is : $c <br>";
+echo "Value of D is : $d <br><br><br>";
+
+// For Associative Array with index number
+$color = [
+    0 => "Red",
+    1 => "Blue",
+    2 => "Green",
+    3 => "Yellow"
+];
+
+list($a[0], $a[1], $a[2], $a[3]) = $color;
+
+echo "Value of A is : $a[0] <br>";
+echo "Value of B is : $a[1] <br>";
+echo "Value of C is : $a[2] <br>";
+echo "Value of D is : $a[3] <br>";
+*/
+
+
+############# Array : Extract() & Array : Compact() Functions ############
+
+
+// extract Function is use for Making Variable of all value in Array
+/* Here is Four Rule for extract 
+1. EXTR_OVERWRITE
+2. EXTR_SKIP
+3. EXTR_PREFIX_SAME
+4. EXTR_PREFIX_ALL */
+
+/*
+// EXTR_OVERWRITE this Rule is ByDefault Rule its Given Array value
+$a = 'blue';
+$colors = array('a'=>'red','b'=>'green','c'=>'blue');
+
+extract($colors,EXTR_OVERWRITE);
+
+echo "Value of A : $a <br>";
+echo "Value of B : $b <br>";
+echo "Value of C : $c <br><br><br>";
+
+// EXTR_SKIP this Rule is Show same outer value
+$a = 'blue';
+$colors = array('a'=>'red','b'=>'green','c'=>'blue');
+
+extract($colors,EXTR_SKIP);
+
+echo "Value of A : $a <br>";
+echo "Value of B : $b <br>";
+echo "Value of C : $c <br><br><br>";
+
+// EXTR_PREFIX_SAME this Rule is Show array value With Prefix and show outer value without prefix in short we use Both value with this Rule
+$a = 'blue';
+$colors = array('a'=>'red','b'=>'green','c'=>'blue');
+
+extract($colors,EXTR_PREFIX_SAME,"test");
+
+echo "Value of A : $test_a <br>"; //$test is a prefix given third parameter in extract
+echo "Value of B : $b <br>";
+echo "Value of C : $c <br><br><br>";
+
+// EXTR_PREFIX_ALL this Rule is work with prefix for all values
+$a = 'blue';
+$colors = array('a'=>'red','b'=>'green','c'=>'blue');
+
+extract($colors,EXTR_PREFIX_ALL,"test");
+
+echo "Value of A : $a <br>"; 
+echo "Value of A : $test_a <br>"; //$test is a prefix given third parameter in extract
+echo "Value of B : $test_b <br>";
+echo "Value of C : $test_c <br><br><br>";
+
+
+////////  compact Function    ////////
+
+// Compact Function is use for make associtive array with the variabels
+
+
+$fname = "Muhammad";
+$lname = "Talha";
+$age = "22";
+$gender = "Male";
+$country = "Pakistan";
+
+$info = ['gender','country'];
+$new = compact("fname","lname","age",$info); //with the variable name its concatinate the others
+
+echo "<pre>";
+print_r($new);
+
+*/
+
+
+############# Array : Range Functions ############
+
+/*
+// For Numaric chracters
+$new = range(1,10);
+
+echo "<pre>";
+print_r($new);
+
+// For alphabatic chracters
+$new = range('a','f');
+
+echo "<pre>";
+print_r($new);
+
+// Range Use with Foreach loop
+foreach(range('z','a') as $value){
+    echo $value . "<br>";
+}
+*/
+
 
 ?>
