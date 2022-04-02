@@ -1695,4 +1695,56 @@ foreach(range('z','a') as $value){
 */
 
 
+############# String : Explode() & Implode() ############
+
+/*
+///// Explode function is use for Convert string value into a Array 
+
+$str = "Hello world. it's a Beautiful day.";
+
+ // In explode we have three values 'saprater','Array_name','Limit' we saprte this with , . etc. And its skip string value if we give limit in Negetive Value.
+$new = explode(" ", $str , "-1"); 
+
+echo "<pre>";
+print_r($new);
+
+////// Implode function is use for Convert Array into String
+
+$array = ['Orange','red','Blue','Green','Black'];
+
+// In this First Value we have sapraters like (. , - ; etc) We also use numbers or Worlds and Html tags Implode Function and Join Perform Same Work 
+$new = implode("<br>",$array);
+
+echo "<pre>";
+print_r($new);
+*/
+
+
+############# String : Str_split() & Chunk_split() ############
+
+/*
+//// str_string(string,length) Function is use for Convert string characters into an array. There are two parameters in str_string Function First is Array name And Second is Length 
+
+$str = "Quadacts Company";
+
+$new = str_split($str,2);
+
+echo "<pre>";
+print_r($new);
+
+//// Chunk_split(string,length,end) Function is use for convert string value Characters into an array with another Chracter. There is Three parameters in Chunk Function First is array name second is lenght and third is some Chracter or Html Tags
+
+
+$str = "Pakistan Gujranwala";
+
+$chunk = chunk_split($str , 2, "<br>");
+
+echo "<pre>";
+print_r($chunk);
+*/
+
+############# UpperCase & LowerCase Function ############
+
+
+
 ?>
