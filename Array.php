@@ -1720,6 +1720,9 @@ print_r($new);
 */
 
 
+                        /////// String Functions /////////
+
+
 ############# String : Str_split() & Chunk_split() ############
 
 /*
@@ -1744,6 +1747,130 @@ print_r($chunk);
 */
 
 ############# UpperCase & LowerCase Function ############
+
+/*
+// There are five type of Upper and Lower case are as Follows
+
+// 1. strtolower() is use for Convert Variable into Lowercase 
+// 2. strtoupper() is use for Convert variable into Uppercase
+// 3. lcfirst() is use for Convert variabel into first Lower case Latter 
+// 4. usfirst() is use for Convert variabel into first Upper case Latter 
+// 5. ucwords() is use for convert all Words First chracters into Upper case
+
+//// For strtolower()
+$test = "PAKISTAN GUJRANWALA";
+
+$new = strtolower($test);
+
+echo $new  . "<br>";
+
+//// for strtoupper()
+$test = "pakistan gujranwala";
+
+$new = strtoupper($test);
+
+echo $new  . "<br>";
+
+//// for lcfirst()
+$test = "Pakistan gujranwala";
+
+$new = lcfirst($test);
+
+echo $new  . "<br>";
+
+//// for ucfirst()
+$test = "pakistan gujranwala";
+
+$new = ucfirst($test);
+
+echo $new  . "<br>";
+
+//// for ucwords()
+$test = "pakistan gujranwala";
+
+$new = ucwords($test);
+
+echo $new  . "<br>";
+
+*/
+
+
+############# String Length & Count Function ############
+
+/*
+//// strlen() is use for find the length of given variable 
+
+$str = "Quadacts Company";
+
+echo strlen($str) . "<br>";
+
+//// str_word_count() is use for find the length of given variable 
+
+$str = "Quadacts Company";
+
+//There are Two parameters first is string name and second is retutn (0 is default, 1 is return array, 2 is return array with key)
+
+$new = str_word_count($str, 0);
+
+echo "<pre>";
+print_r($new);
+
+$new = str_word_count($str, 1);
+
+echo "<pre>";
+print_r($new);
+
+$new = str_word_count($str, 2);
+
+echo "<pre>";
+print_r($new);
+
+
+//// substr_count() is use for search the word in the variable
+
+$Chnab = "They may go home when the work is done for the day of the duty.";
+
+// There are four parameters First is (string name) second is (Searching Word) Third is starting point and Fourth is End Point...  Note third and fourth is optional.
+
+echo substr_count($Chnab,"the",24,30);
+*/
+
+
+############# String FInd Position Function ############
+
+/*
+// There are Four types for Find Position are as Follows.
+// 1. strpos
+// 2. strrpos
+// 3 stripos
+// 4. strripos
+
+//// Strtpos() is use for Find Position it's have three paramenters first is {String name} second is {Finding Word} and the Third is {starting Point} we also have starting point in negitive.
+
+$str = "Hello World. The world is nice";
+
+echo "strpos is : " . strpos($str, "world") . "<br>";
+echo strpos($str, "world",10) . "<br>";
+
+// strrpos() is finding position to Reverse and the Both Strings are case sancetive
+
+echo "strrpos is : " . strrpos($str, "world") . "<br>";
+
+// stripos() is work same like a strpos but stripos is case insentive its Search word not case of the latter
+
+$str = "Hello World. The world is nice";
+
+echo "stripos is : " . stripos($str, "WORLD") . "<br>";
+echo stripos($str, "world",10) . "<br>";
+
+// strripos() is finding position to Reverse and the Both Strings are case sancetive
+
+echo "strripos is : " . strripos($str, "WORLD") . "<br>";
+
+*/
+
+############# String Search Function ############
+
 
 
 
