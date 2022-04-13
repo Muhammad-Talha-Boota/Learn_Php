@@ -349,9 +349,134 @@ $str = " Hello Quadacts ";
 
 echo str_pad($str,20,'&&',STR_PAD_BOTH) . "<br>"; //It's Have Four Parameters Fourth is opetional 
 
-// str_repeat(string,number of repeat) Function is use for repeting the value of a variable
+//// str_repeat(string,number of repeat) Function is use for repeting the value of a variable
 
 echo str_repeat($str ,5) . "<br>";
 */
+
+
+############# String Trim & chop Functions ############
+
+/*
+//// trim() string function is use for Trim the chracter of a variable from the first or last of the variable.Real Time its use for the Form inputs for Egnore the more Space
+
+$str = "Yahoo Baba";
+echo $str . "<br>";
+
+echo trim($str,"Ya") . "<br>"; //There are two parameters first is string and second is chracter
+
+
+//// rtrim() Remove from the the Right Side of the Variable
+
+echo rtrim($str,"ba") . "<br>"; // its Alse have to Parmeters
+
+
+//// ltrim() Remove from the the Left Side of the Variable
+
+echo ltrim($str,"Ya") . "<br>"; // its Alse have to Parmeters
+
+// Real time use of trim
+
+$data = "Quadacts";
+
+echo $data . "<br>";
+
+echo trim($data) . "<br>"; //This trim remove the Space Around the variable
+
+
+//// Chop string Function Work like a rtrim
+
+echo chop($data,'st');
+*/
+
+
+############# String Addslashes & Stripslashes Functions ############
+
+/*
+//// addslashes() Function is Use for add Slashes in the variable on the single codes and Double codes. Its USe for Protect data from the heackers
+
+$data = "Hello I'm in 'Quadacts'";
+
+echo $data . "<br>";
+
+echo addslashes($data) . "<br>"; 
+ 
+$new = addslashes($data);
+
+//// stripslashes() is use for Remove slahes of variabels from the database.
+
+echo stripslashes($new) . "<br>";
+
+//// addcslashes() is Work like a addslashes But in this Function We Have Slashes on any Wheare Where we want.
+
+echo addcslashes($data,"HmaQ") . "<br>"; // Second parameter is Chracter of the vareable  
+
+echo addcslashes($data,"a..z") . "<br>"; // For Multipels Chracters
+
+echo addcslashes($data,"A..Z") . "<br>"; // For Multipels Chracters
+
+//// stripcslashes() is use for Remove Slashes for addcslashes().
+
+$new1 = addcslashes($data,"HmaQ");
+
+echo stripslashes($new1);
+
+*/
+
+
+############# String htmlentities() & htmlspecialchars() Functions ############
+
+/*
+
+//// htmlentities() Function is Use for Have the Codes of spacial Chracters or Quotes for the Source code to protect data From Heakers.In this Function we Have two parameters First is Stiring name and Second is Flag For Singel Quotes , Dounbel Quotes and No Quotes.
+
+
+$str = "Single 'Quote' is <b>Bold</b>";
+
+echo $str . "<br>";
+
+echo htmlentities($str,ENT_QUOTES) . "<br>"; // ENT_QUOTES & ENT_NOQUOTES
+
+$str1 = '<a href="http://www.yahoobaba.net">Yahoo Baba Website</a>';
+
+echo $str1 . "<br>";
+
+echo htmlentities($str1) . "<br>";
+
+//// html_entity_decode() Function is use for Decode the htmlentities() Function
+
+$tal = htmlentities($str);
+
+echo html_entity_decode($tal) . "<br>";
+
+//// htmlspecialchars() Function is work like a  htmlentities() But in this Function its Change some Spacial Chracters.
+ 
+$str3 = "Single 'Quote' is <b>Bold</b>";
+
+echo htmlspecialchars($str3, ENT_QUOTES) . "<br>";
+
+
+//// htmlspecialchars_decode() FUnction is Use for the decode htmlspecialchars() Function
+
+$ana = htmlspecialchars($str3);
+
+echo  htmlspecialchars_decode($ana) . "<br>";
+
+
+        ///   <<< Function for the List and code of Entites & Spacialcracters >>>   ///
+
+  // << get_html_translation_table(function{HTML_ENTITIES & HTML_SPECIALCHARS},flags) >> //
+
+// HTML_SPECIALCHARS LIST
+
+echo "<pre>";
+print_r(get_html_translation_table(HTML_SPECIALCHARS));
+
+// HTML_ENTITIES LISt
+echo "<pre>";
+print_r(get_html_translation_table(HTML_ENTITIES));
+
+*/
+
 
 ?>
