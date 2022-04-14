@@ -479,4 +479,87 @@ print_r(get_html_translation_table(HTML_ENTITIES));
 */
 
 
+
+############# String md5 & sha1 Functions ############
+
+/*
+//// md5() Function is use for change the password into the hecsadesemal form. Its Have two parameters first is string name and second is Raw{True & False(Bydefault)}. in true its change password in Binarry form.
+
+$str = "Hello";
+
+echo "The String is : " .  $str . "<br>";
+
+echo "md5 Binary is : " . md5($str,true) . "<br>";
+
+echo "md5 HEX is : " . md5($str) . "<br>";
+
+//// sha1() Function Work like a md5() Function But sha1() Function is more Scure then md5() Function
+
+echo "sha1 Binary is : " . sha1($str,true) . "<br>";
+
+echo "sha1 HEX is : " . sha1($str) . "<br>";
+
+// Real Time Example of Md5 Function
+
+if(md5($str) == "8b1a9953c4611296a827abf8c47804d7"){
+  echo "Password Match Successfully";
+} else {
+  echo "Incorrect Password";
+}
+*/
+
+
+############# String Convert_uuencode & convert_uudecode Functions ############
+
+/*
+//// convert_uuencode() function is use for Encode some Text or string For Protect From the Heakers
+
+$str = "Numman";
+
+echo convert_uuencode($str) . "<br>";
+
+//// convert_uudecode() Function is Use for Decode the Encode Text 
+
+$new = convert_uuencode($str);
+
+echo convert_uudecode($new);
+
+*/
+
+
+############# String bin2hex & hex2bin Functions ############
+
+/*
+//// bin2hex() Function is use for Change ASCII value into Hexadecimal Characters
+
+$str = "Hello World";
+
+echo bin2hex($str) . "<br>";
+
+//// hex2bin() Function is use for Change Hexadecimal Characters into ASCII Value
+
+$new = bin2hex($str);
+
+echo hex2bin($new);
+*/
+
+
+############# String chr() & ord() Functions ############
+
+/*
+//// chr() Function is use for Finding the Chracter of ASCII Value
+
+$str = chr(76); //In this Parameter we Use Octel Value , ASCII Value or HEX Value
+
+echo $str . "<br>";
+
+//// ord() Function is Use For Finding ASCII Value of an Chracter
+
+$tal = ord("L"); //Its Return ASCII VAlue only First Chracter
+
+echo $tal
+*/
+
+
+
 ?>
