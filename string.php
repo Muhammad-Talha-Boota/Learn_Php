@@ -561,5 +561,24 @@ echo $tal
 */
 
 
+############# Strip_tags() & Wordwrap() ############
+
+/*
+//// strip_tags(sting , allow ) Function is use for Remove Tags from variable. It's have two parameters First is String And Second is Allow that which tags we Allow in the String.
+
+$str = "Hello <b>World</b>. Hello <i>Earth</i>.";
+
+echo $str . "<br>";
+
+echo strip_tags($str,"<b><i><h1>") . "<br>";
+
+
+//// wordwrap(string , width , break , cut) Function is Use For Wrap the Stringn. it's have Fourth Parameters First is String name Second is Width(Break after How much Chracters) Third is Break tag and Fourth is cut(True , False).
+
+$tl = "The World is Beautiful. When Every Person have Beautiful Heart.";
+
+echo wordwrap($tl,"1","<br>",true)
+*/
+
 
 ?>
