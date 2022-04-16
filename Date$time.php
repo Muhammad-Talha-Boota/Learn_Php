@@ -66,6 +66,58 @@ echo "<h1>Today Date :" . date('y-F-dS') . "</h1><br>"; //Amarican Date Type
 
 
                 ####### Time() Function #########
+/*
+          ### << https://www.php.net/manual/en/timezones.asia.php >> ###
+          // Link For Defferant Time Zone Codes of Asia
+
+//(h,H,g,G) For Hour
+
+echo "Current Hour is : " . date('h') . "<br>"; //for 01 to 12
+echo "Current Hour is : " . date('H') . "<br>"; //fro 01 to 23 
+echo "Current Hour is : " . date('g') . "<br>"; //for 1 to 12
+echo "Current Hour is : " . date('G') . "<br>"; //for 0 to 23
+
+
+//(i) For Minutes
+
+echo "Current Minute is : " . date('i') . "<br>"; //only one
+
+
+//(i) For Seconds
+
+echo "Current Second is : " . date('s') . "<br>"; //only one
+
+
+//(i) For Meridien
+
+echo "Current Meridian is : " . date('a') . "<br>"; //For maredian in small Case
+echo "Current Meridian is : " . date('A') . "<br>"; //For maredian in Capital Case
+
+
+// Full Time 
+
+date_default_timezone_set("Asia/Karachi");
+echo "<h1>Time is " . date('h:i:s A e') . "</h1><br>";
+echo "<h1>Date & Time is " . date('dS/M/Y h:i:s A e') . "</h1><br>"; // e parameter for Time Zone
+*/ 
+
+                  ####### MkTime() & Gmmktime() Function #########
+
+/*
+//// mktime() Function is use for have past Time. Mktime Full Form Maketime this Function Have Six parameters First is Hour second is minutes third is second Fourth is month Fivth is Date and Sixeth is Year.
+
+echo "<h1>Date & Time is " . date('dS/M/Y h:i:s A') . "</h1><br><br>";
+
+echo date("d/M/Y h:i:s A" , mktime(0,0,0,10,15,2003)) ."<br>";
+
+//// gmmktime() is show Eurpen time Zone 
+
+echo date("d/M/Y h:i:s A" , gmmktime(0,0,0,10,15,2003)) ."<br>";
+*/
+
+
+
+
 
 
 ?>
