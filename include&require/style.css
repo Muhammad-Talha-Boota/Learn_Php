@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: arial,helvetica;
+}
+
+body{
+    background: slategray;
+}
+
+#wrapper{
+    border: 1px solid black;
+    width: 1000px;
+    background: #fff;
+    margin: 0 auto;
+}
+
+#header{
+    background: crimson;
+    height: 100px;
+    color: #000;
+}
+
+#header h1{
+    padding: 40px 0 0 20px;
+}
+
+#menu{
+    background: lightsalmon;
+}
+
+#menu li{
+    display: inline-block;
+}
+
+#menu li a{
+    display: block;
+    text-decoration: none;
+    padding: 10px 20px;
+    color: black;
+}
+
+#menu li a:hover{
+    background: crimson;
+    color: #fff;
+}
+
+#contact{
+    width: 800px;
+    min-height: 400px;
+    float: left;
+    padding: 15px;
+}
+
+#contact h1{
+    padding: 10px 5px;
+}
+
+#contact p{
+    padding: 10px 5px;
+}
+
+#contact p::selection ,
+#contact h2::selection {
+    background: crimson;
+    color: #fff;
+  }
+
+#sidebar{
+    background: lightsalmon;
+    min-height: 400px;
+    width: 190px;
+    float: right;   
+    padding: 20px;
+}
+
+#sidebar a{
+    text-decoration: none;
+    color: black;
+}
+
+
+#footer{
+    background: lightsalmon;
+    padding: 10px;
+    text-align: right;
+    clear: both;
+}
