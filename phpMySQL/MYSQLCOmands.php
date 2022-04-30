@@ -364,6 +364,182 @@ SELECT SUM(name) AS 'Total Salery' FROM emp_record
 SELECT AVG(name) AS 'Total Average' FROM emp_record
 
 
+<!-- ########### UPDATE SQL # 17 ########## -->
+
+UPDATE COMMAND is use for update the Data From the data table.
+
+<!-- UPDATE Syntax -->
+
+UPDATE table_name
+SET column1_name = value1 , column2_name = value2,....
+WHERE condition;
+
+<!-- Quree Example Single Column Update -->
+
+UPDATE student_information SET name = "Muhammad Talha"  WHERE id = 10;
+
+<!-- Quree Example Multiple Column Update -->
+
+UPDATE student_information SET name = "Muhammad Talha",age = 21, phone = 03027124  WHERE id = 10;
+
+<!-- An other Example with WHERE condition; -->
+
+UPDATE student_information SET age = 23 WHERE id IN (7,8);'
+
+
+<!-- ########### COMMIT & ROLLBACK SQL # 18 ########## -->
+
+And if we Work in SQL WorkBAnch then we Set Some Settings.
+
+<!-- Impoetent Note -->
+
+By default, MySQL automatically commits the changes permanently to the database. To force MySQL not to commit changes automatically, you use the following statement:
+
+SET autocommit = 0;
+Code language: SQL (Structured Query Language) (sql)
+Or
+
+SET autocommit = OFF
+
+<!-- ROLLBACK -->
+
+ROLLBACK Command revert INSERT, UPDATE, DELETE And All quree of Insert Data. And Revert All Command that Run Before Run This Quree. Mean Ka Ya Pahla Sa Run Hoi Sabhi Command Ko Revers kr da ga.
+
+<!-- COMMIT -->
+
+Commit Command Save All Quree. Mean ka Es Ko Use krna ka Bad Ya Jab Ham ROLLBACK Command Use kra ga to Roll Back Sabhi Update ko Reverse nhi Kra ge bss Commit Command Tak ke Quree ko he Reverse kra ge 
+
+<!-- NOTE -->
+
+This Two Commands COMMIT & ROLLBACK Only Work For Three Commands Are as Follous.
+
+COMMIT & ROLLBACK Works for.
+
+1. INSERT 
+2. UPDATE
+3. DELETE
+
+<!-- Quree Example For COMMIT -->
+
+SELECT * FROM `student_information` COMMIT
+
+
+
+<!-- ########### DELETE SQL # 19 ########## -->
+
+DELETE Command is use foe Delete Some Data From the Data Table.
+
+<!-- DELETE Syntax -->
+
+DELETE FROM table_name
+WHERE condition;
+
+
+<!-- ########### PRIMARY KEY & FOREGIN KEY SQL # 20 ########## --> Constraints ke Last two keys
+
+<!-- Auto_Increment Type -->
+
+By Useing This Type the ID Have Default Data With Sequence. 
+
+
+
+
+
+<!--What is PRIMARY KEY Constraint -->
+
+1. primary key Always has a unique data.
+2. A Primary key Cannot Have null Value.
+3. A table can contain only one primary key Constraint.
+
+<!-- Create Table with PRIMARY KEY Syntax FOR NEW Table -->
+
+CREATE TABLE table_name(
+    id NOT NULL Auto_Increment,
+    name VARCHAR(50) NOT NULL,
+    age INT NOT NULL,
+    city VARCHAR(20) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+
+<!-- Alter Table with PRIMARY KEY Syntax FOR Already create Table -->
+
+ALTER TABLE table_name
+
+ADD PRIMARY KEY (id);
+
+
+<!-- What is FOREIGN KEY Constraint  ? -->
+
+1. A FOREIGN KEY is a key used to link two table together.
+2. A FOREIGN KEY in one table used to point PRIMARY key in another table.
+
+
+<!-- Create Table with FOREIGN KEY Syntax FOR NEW Table -->
+
+CREATE TABLE table_name(
+    id NOT NULL Auto_Increment,
+    name VARCHAR(50) NOT NULL,
+    age INT NOT NULL,
+    city VARCHAR(20) NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (city) REFERNCES City (cid)
+);
+
+
+<!-- Alter Table with FOREIGN KEY Syntax FOR Already create Table -->
+
+ALTER TABLE table_name
+
+ADD FOREIGN KEY (city) REFERNCES City (cid);
+
+
+                    <!-- ***** JOIN  ***** -->
+
+There are four type of join are as follous
+
+1. INNER JOIN
+2. LEFT JOIN
+3. RIGHT JOIN
+4. CROSS JOIN
+
+<!-- ########### INNER JOIN  SQL # 21 ########## -->
+
+The INNER JOIN selects records that have matching value in both tables.
+
+<!-- INNER JOIN / JOIN Syntax -->
+
+SELECT columns 
+FROM table1 
+INNER JOIN table2
+ON table1.column_name = table2.columns_name;
+
+<!-- Quree Example of INNER JOIN / JOIN -->
+
+SELECT * FROM std_rec S INNER JOIN city C ON S.city = C.cid
+
+<!-- Qurey Example with Require Columns, Where Condition and with the Order  -->
+
+SELECT id,name,gender,age,cityname FROM std_rec S INNER JOIN city C ON S.city = C.cid WHERE gender = 'Male' ORDER BY name ASC;
+
+
+<!-- ########### RIGHT JOIN & LEFT JOIN  SQL # 21 ########## -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
