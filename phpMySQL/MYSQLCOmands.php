@@ -11,6 +11,8 @@ BINARY is use for case sensitive. By Use this one it's return Data into the Give
 create DATABASE test(Name of Data Base);
 
 
+
+
 <!-- MySQL Create Table Tutorial SQL # 3 -->
 
 <!-- command for create data Table -->
@@ -37,12 +39,16 @@ VARCHAR And Date Wright into the Codes
 
 USE database_name;
 
+
+
 <!-- ######### MySQL Insert Tutorial SQL # 4  ########### -->
 
 <!-- Command For Insert Date into the data_Table -->
 
 INSERT INTO table_name (column1,column2,......)
 value(Value1,value2,.....);
+
+
 
 
 <!-- MySQL INSERT Multiple Rows Tutorial  SQL # 5 -->
@@ -54,6 +60,8 @@ value
 (Value1,value2,.....),
 (Value1,value2,.....),
 (Value1,value2,.....);
+
+
 
 
 <!-- ############ MySQL Constraints SQL # 6  ########### -->
@@ -80,6 +88,8 @@ CREATE TABLE student_information(
     Gender VARCHAR(10) NOT NULL
     City VARCHAR(50) NOT NULL DEFAULT'Gujranwala'
 );
+
+
 
 
 
@@ -122,6 +132,9 @@ WHERE condition
 (= Equal)   (> Greater then)  (< Less then) (>= Greter then or Equal to) (<= less then or equal to) (<> or != not Equal) (BETWEEN(Between a certain range))  (LIKE(Search for a pattern))  (IN(To specify multiple possible values for a columns)).
 
 
+
+
+
 <!-- ############ MySQL AND, OR, NOT Operators SQL # 8   ############ -->
 
 <!-- AND Operater Return data whoes Exist in Both conditions -->
@@ -148,6 +161,9 @@ SELECT * FROM student_information WHERE (age <= 20 OR age >= 25) AND gender = 'F
 SELECT * FROM student_information WHERE NOT City = 'Gujranwala'
 
 
+
+
+
 <!-- ########## MySQL IN & NOT IN Operator SQL # 9  ########### -->
 
 <!-- IN operater is the Short Way of OR operater. -->
@@ -167,6 +183,9 @@ WHERE column_name IN (value1, value2,...);
 <!-- we have multiple value in the command -->
 
 SELECT * FROM student_information WHERE age NOT IN(18,21,25,22,23)
+
+
+
 
 
 <!--  ####### MySQL BETWEEN & NOT BETWEEN Operator SQL # 10  ######## -->
@@ -194,6 +213,9 @@ SELECT * FROM student_information WHERE name BETWEEN "a" AND "z";
 <!-- BETWEEN For Date  -->
 
 SELECT * FROM quad WHERE DOB BETWEEN '1900-01-01' AND '2010-01-01';
+
+
+
 
 
 <!-- ########  MySQL LIKE Operator & Wildcards SQL # 11  ####### -->
@@ -229,6 +251,9 @@ FROM table_name
 WHERE column_name NOT LIKE pattern;
 
 
+
+
+
 <!-- ########### SELECT REGULAR Expression SQL # 12  ########## -->
 
 By useing REGULAR Expression we can Access More then one reconrd at a time. For More Then one Expression we Use | (pai sign)
@@ -248,6 +273,9 @@ By useing REGULAR Expression we can Access More then one reconrd at a time. For 
 SELECT column1, column2, column3, ......
 FROM table_name
 WHERE column_name REGEXP pattern;
+
+
+
 
 
 <!-- ########### ORDER BY & DISTINCT SQL # 13  ########## -->
@@ -279,6 +307,9 @@ SELECT DISTINCT age AS 'Student-Age' FROM student_information ORDER BY age ASC
 
 
 
+
+
+
 <!-- ########### IS NULL & IS NOT NULL SQL # 14 ########## -->
 
 <!-- IS NULL is use for return Null Date from the Data table -->
@@ -301,6 +332,9 @@ WHERE Column_name IS NOT NULL;
 <!-- Qurey Example of IS NOT NULL -->
 
 SELECT * FROM `quad` WHERE DOB IS NOT NULL;
+
+
+
 
 
 <!-- ########### LIMIT & OFFSET SQL # 15 ########## -->
@@ -330,6 +364,9 @@ LIMIT offset, number;
 <!-- Qurey Example of IS LIMIT -->
 
 SELECT * FROM student_information WHERE City <> 'Gujranwala' LIMIT 3, 4;
+
+
+
 
 <!-- ########### Aggregate Functions SQL # 16 ########## -->
 
@@ -364,6 +401,9 @@ SELECT SUM(name) AS 'Total Salery' FROM emp_record
 SELECT AVG(name) AS 'Total Average' FROM emp_record
 
 
+
+
+
 <!-- ########### UPDATE SQL # 17 ########## -->
 
 UPDATE COMMAND is use for update the Data From the data table.
@@ -385,6 +425,9 @@ UPDATE student_information SET name = "Muhammad Talha",age = 21, phone = 0302712
 <!-- An other Example with WHERE condition; -->
 
 UPDATE student_information SET age = 23 WHERE id IN (7,8);'
+
+
+
 
 
 <!-- ########### COMMIT & ROLLBACK SQL # 18 ########## -->
@@ -425,6 +468,9 @@ SELECT * FROM `student_information` COMMIT
 
 
 
+
+
+
 <!-- ########### DELETE SQL # 19 ########## -->
 
 DELETE Command is use foe Delete Some Data From the Data Table.
@@ -433,6 +479,9 @@ DELETE Command is use foe Delete Some Data From the Data Table.
 
 DELETE FROM table_name
 WHERE condition;
+
+
+
 
 
 <!-- ########### PRIMARY KEY & FOREGIN KEY SQL # 20 ########## --> Constraints ke Last two keys
@@ -493,6 +542,26 @@ ALTER TABLE table_name
 
 ADD FOREIGN KEY (city) REFERNCES City (cid);
 
+<!-- CRETE Table and Insert data into table -->
+
+CREATE TABLE web_stu(
+    id INT NOT NULL Auto_Increment,
+    name VARCHAR(50) NOT NULL,
+    age INT NOT NULL,
+    city INT NOT NULL,
+    course INT NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (city) REFERENCES city (cid)
+);
+
+INSERT INTO web_stu(id,name,age,city,course) 
+VALUES (1,'AHMAD',33,3,4),
+(2,'Kul',27,2,1),
+(3,'Final',28,2,1),
+(4,'Adnan',25,3,2),
+(5,'Khan',33,4,3);
+
+
 
                     <!-- ***** JOIN  ***** -->
 
@@ -502,6 +571,8 @@ There are four type of join are as follous
 2. LEFT JOIN
 3. RIGHT JOIN
 4. CROSS JOIN
+
+
 
 <!-- ########### INNER JOIN  SQL # 21 ########## -->
 
@@ -523,8 +594,234 @@ SELECT * FROM std_rec S INNER JOIN city C ON S.city = C.cid
 SELECT id,name,gender,age,cityname FROM std_rec S INNER JOIN city C ON S.city = C.cid WHERE gender = 'Male' ORDER BY name ASC;
 
 
-<!-- ########### RIGHT JOIN & LEFT JOIN  SQL # 21 ########## -->
 
+
+ 
+<!-- ########### RIGHT JOIN & LEFT JOIN  SQL # 22 ########## -->
+
+<!-- what is left join -->
+
+The LEFT JOIN returns all records from the left table (table1), and also return matched records from the right table (table2)
+ 
+<!-- LEFT JOIN Syntax. -->
+
+SELECT columns
+FROM table1
+LEFT JOIN table2
+ON table1.column_name = table2.column_name;
+
+<!-- Qurey Example of LEFT JOIN  -->
+
+SELECT * FROM std_rec LEFT JOIN city ON std_rec.city = city.cid;
+
+
+<!-- What is RIGHT JOIN ? -->
+
+The RIGHT JOIN returns all records from the right table (table2), and the matched records from the left table (table1)
+ 
+<!-- RIGHT JOIN Syntax. -->
+
+SELECT columns
+FROM table1
+RIGHT JOIN table2 
+ON table1.column_name = table2.column_name;
+
+<!-- Qurey Example of RIGHT JOIN  -->
+
+SELECT * FROM std_rec RIGHT JOIN city ON std_rec.city = city.cid;
+
+
+
+
+
+<!-- ########### MySQL CROSS JOIN SQL # 23 ########## -->
+
+<!-- what is cross join -->
+
+Cross join return all record of table1 multiply by table2 Records one by One.
+
+<!-- Cross Join Syntax -->
+
+SELECT * FROM table1 CROSS JOIN table2;
+
+<!-- Qurey Example of CROSS JOIN  -->
+
+SELECT * FROM std_rec CROSS JOIN city;
+
+
+
+
+
+
+<!-- ########### MySQL JOIN Multiple Tables SQL # 24 ########## -->
+
+<!-- JOIN Multiple Table -->
+
+This join is use for taken maching data from from the all join tables.
+
+<!-- INNER JOIN Syntax for Multiple Table. -->
+
+we have more then 2 or 3 table for inner join
+
+SELECT columns 
+FROM table1 
+INNER JOIN table2
+ON table1.column_name = table2.columns_name
+INNER JOIN table3
+ON table1.column_name = table3.columns_name;
+
+<!-- Qurey Example of INNER JOIN for Multiple table -->
+
+SELECT * FROM web_stu A INNER JOIN city B ON A.city = B.cid INNER JOIN course_n C ON A.course = C.coid;
+
+<!-- Qurey Example With Selected Columns -->
+
+SELECT id,name,age,cityname,corsename FROM web_stu A JOIN city B ON A.city = B.cid JOIN course_n C ON A.course = C.coid;
+
+<!-- Qurey Example With Conditional Base -->
+
+SELECT id,name,age,cityname,corsename FROM web_stu A JOIN city B ON A.city = B.cid JOIN course_n C ON A.course = C.coid WHERE age >= 30
+
+<!-- NOTE -->
+
+We alse use this for left Join or Right Join.
+
+
+
+
+
+
+<!-- ########### MySQL GROUP BY & HAVING Clause SQL # 25 ########## -->
+
+<!-- WHAT IS GROUP BY..?  -->
+
+The Group by clause is used in conjunction with the SELECT statement and Aggregate function to group rows togather by common columns values.
+
+<!-- SELECT with Group By syntax. -->
+
+<!-- For one table -->
+
+SELECT calumns FROM table_name WHERE condition Group BY Column_name(s); 
+
+<!-- For More then one table -->
+
+SELECT calumns FROM table1 INNER JOIN table2 ON table1.column_name = table2.column_name WHERE condition GROUP BY Column_name(s); 
+
+<!-- QUREE Example of Group by -->
+
+SELECT city, COUNT(city) FROM web_stu GROUP BY city;
+
+<!-- QUREE Example of Group by with JOIN -->
+
+SELECT cityname, COUNT(city) FROM web_stu A INNER JOIN city B ON A.city = B.cid GROUP BY city;
+
+<!-- QUREE Example of Group by with JOIN and Conditional Base(WHERE) -->
+
+SELECT cityname, COUNT(A.city) AS Total FROM web_stu A INNER JOIN city B ON A.city = B.cid WHERE A.age >= 30 GROUP BY city;
+
+<!-- QUREE Example of Group by with JOIN and Conditional Base(WHERE) & ORDER BY -->
+
+SELECT cityname, COUNT(A.city) AS Total FROM web_stu A INNER JOIN city B ON A.city = B.cid WHERE A.age >= 30 GROUP BY city ORDER BY city DESC;
+
+
+<!-- HAVING Clause  -->
+
+HAVING Clause is the short form of where clause and always use with group by.
+
+<!-- SELECT with GROUP BY & HAVING syntax -->
+
+SELECT columns FROm table_name GROUP BY column1_name(s) HAVING condition;
+
+
+<!-- QUREE Example of GROUP BY & HAVING syntax -->
+
+
+SELECT cityname, COUNT(A.city) AS Total FROM web_stu A INNER JOIN city B ON A.city = B.cid WHERE A.age >= 30 GROUP BY city HAVING COUNT(A.city) > 3 ORDER BY city DESC;
+
+
+
+
+
+<!-- ###########MySQL SubQuery with EXISTS & NOT EXISTS SQL # 26 ########## -->
+
+
+<!-- What is SubQuery or Nested Query ..? -->
+
+Ak Quree ka Ander Dusri Quree lekhna ko Sub Quree ya Nested Quree kahta ha.
+
+<!-- SELECT with SubQuery Syntax  -->
+
+SELECT column FROM table1 WHERE column = (SELECT column FROM table2 WHERE condition)
+
+SubQuery is Alse work with INSERT UPDATE DELETE SELECT.
+
+<!-- Query Example of sub_query or Nested query -->
+
+SELECT name FROM web_stu WHERE course = (SELECT coid FROM course_n WHERE corsename = 'HTML');
+
+<!-- Query Example of sub_query or Nested query for more than one condition -->
+
+SELECT name FROM web_stu WHERE course IN (SELECT coid FROM course_n WHERE corsename IN ('HTML','CSS'));
+
+
+<!-- What is EXISTS..? -->
+
+If Child command return any Single Record Exists Then Parent command show results.
+
+<!-- SELECT with EXISTS syntax -->
+
+SELECT column FROM table1 WHERE EXISTS = (SELECT column FROM table2 WHERE condition);
+
+<!-- Query Example of Exists -->
+
+SELECT name FROM web_stu WHERE EXISTS (SELECT coid FROM course_n WHERE corsename = 'HTML');
+
+
+<!-- What is NOT EXISTS..? -->
+
+If Child command not return any Single Record Exists Then Parent command show results.
+
+<!-- SELECT with EXISTS syntax -->
+
+SELECT column FROM table1 WHERE NOT EXISTS = (SELECT column FROM table2 WHERE condition);
+
+<!-- Query Example of NOT Exists -->
+
+SELECT name FROM web_stu WHERE NOT EXISTS (SELECT coid FROM course_n WHERE corsename = 'HTML');
+
+
+
+
+<!-- ########### MySQL UNION & UNION ALL SQL # 27 ########## -->
+
+<!-- What is UNION & UNION ALL..? -->
+
+UNION and UNION ALL return two selected Table's all columns in on table But the differnce between UNION and UNION ALL is that UNION ALL RETURN Duplicate data if two table have same name data.BUT
+the UNION have no Duplicate data.
+
+<!-- UNION & UNION ALL Syntax -->
+
+SELECT column1,column2,.. FROM table1 UNION/UNION ALL SELECT column1,column2,.. table2;
+
+There are some rule for UNION & UNION ALL are as follow;
+
+1. Each SELECT statment within UNION must have the same number of columns.
+2. The columns must also have similar data types.
+3. The columns in each SELECT statment must also be in the same order.
+
+<!-- Query example of UNION -->
+
+SELECT * FROM city UNION SELECT * FROM course_n;
+
+
+<!-- Query Example with Inner Join and subQuery  -->
+
+
+SELECT * FROM web_stu s INNER JOIN city c ON s.city = c.cid WHERE c.cityname = 'Lahore' UNION ALL SELECT * FROM web_lac l INNER JOIN city c2 ON l.city = c2.cid WHERE c2.cityname = "Lahore";
+
+<!-- Query Example with Inner Join and subQuery with Selected Column  -->
+
+SELECT s.name,c.cityname,s.age FROM web_stu s INNER JOIN city c ON s.city = c.cid WHERE c.cityname = 'Lahore' UNION ALL SELECT l.name,c2.cityname,l.age FROM web_lac l INNER JOIN city c2 ON l.city = c2.cid WHERE c2.cityname = "Lahore"
 
 
 
