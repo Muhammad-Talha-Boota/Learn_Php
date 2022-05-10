@@ -825,7 +825,219 @@ SELECT s.name,c.cityname,s.age FROM web_stu s INNER JOIN city c ON s.city = c.ci
 
 
 
+<!-- ########### MySQL IF & CASE Statement SQL # 28 ########## -->
 
+<!-- What is IF Clause..? -->
+
+IF Clause is use for return conditional base data from the data table. This is use for only two condition true & False.
+
+<!-- SELECT With IF Clause Syntax -->
+
+SELECT column1,column2,...
+IF (Condition, TRUE Result, FALSE Result) AS alias_name
+FROM table_name;
+
+<!-- Query Example of IF Clause -->
+
+SELECT id,name,pct, IF(pct >= 33,'PASS','FAIL') AS Result FROM first_year_stu;
+
+
+<!-- What is CASE Clause -->
+
+Case Clause is use for return conditional base data from the data table. This is use for more then two condition.
+
+SELECT column1,column2,...
+CASE
+ WHEN Condition1 THEN result1
+ WHEN Condition2 THEN result2
+ WHEN Condition3 THEN result3
+ WHEN Condition4 THEN result4
+ ELSE result alse_name
+END AS alias_name
+FROM table_name;
+
+
+<!-- Query Example for CASE Clause -->
+
+
+SELECT id,name,pct,
+CASE
+   WHEN pct >= 80 AND pct <=100 THEN 'ON Marit'
+   WHEN pct >= 60 AND pct < 80 THEN '1st Dev.'
+   WHEN pct >= 45 AND pct < 60 THEN '2nd Dev.'
+   WHEN pct >= 33 AND pct < 45 THEN '3rd Dev.'
+   WHEN pct < 33 THEN 'Fail'
+   ELSE 'Invalid Percentage %'
+END AS Grade
+FROM first_year_stu;
+
+
+<!-- CASE Clase For Update Query  -->
+
+UPDATE first_year_stu SET pct = (CASE id WHEN 5 THEN 35 WHEN 6 THEN 90 END) WHERE id IN (5,6);
+
+
+
+
+<!-- ########### MySQL Arithmetic Functions SQL # 29 ########## -->
+
+There are Eighteen type of artihmatic operaters but the Nine are most important are as follows.
+1. PI()
+2. ROUND()
+3. CEIL()
+4. FLOOR()
+5. POW()
+6. SQRT()
+7. RAND()
+8. ABS()
+9. SIGN()
+
+<!-- 1. PI() -->
+
+The PI() function returns the value of PI.
+
+<!-- Query example of PI -->
+SELECT PI();
+
+<!-- 2. ROUND() -->
+
+The ROUND() function Return ROUND value for example if we have 4.3 then it's return 4 and if we have 4.6 then it return 5. In this Function there is a second parameter is the number of digit after DOT .
+
+<!-- Query example of Round -->
+SELECT ROUND(123.678,2);
+
+<!-- 3. CEIL() -->
+
+The CEIL() function Return roof(upper) value for example if we have 4.3 then it's return 5.
+
+<!-- Query Example of CEIL -->
+SELECT CEIL(12.43);
+
+<!-- 4. FLOOR() -->
+
+The FLOOR() function Return Floor(lower) value for example if we have 4.3 then it's return 4.
+
+<!-- Query Example of FLOOR -->
+SELECT FLOOR(12.43);
+ 
+ <!-- 5. POW(base , exp) -->
+
+ The POW() function is use for taken Power of a value. In this parameter there are two parameters first is Base and second is exponent.
+
+ <!-- QUERY Example of POW -->
+ SELECT POW(2,4);
+
+ <!-- 6. SQRT() -->
+ 
+ The SQRT() function is use for taken square root of a value.
+
+ <!-- Query Example of SQRT -->
+ SELECT SQRT(4);
+ 
+ <!-- 7. RAND() -->
+
+ The RAND() function Return Rendum number between 0 and 1 but by calculation we change the random number between 1 to 10.
+
+ <!-- Random Number from 1 to 100 -->
+ SELECT RAND() * 100;
+
+ <!-- Query Example of Rand -->
+ SELECT RAND();
+
+ <!-- 8. ABS -->
+ 
+ The ABS() function Return Absolute Vale.
+
+ <!-- Query Example for ABS  -->
+ SELECT ABS(-454);
+
+ <!-- 9. SIGN() -->
+
+ This SIGN() Opperater Return three type of value are as follows.
+ 1. (NO > 0 then return 1)
+ 2. (NO = 0 then return 0)
+ 3. (NO < 0 then return -1)
+
+ <!-- Query Example of SIGN -->
+ SELECT SIGN(0);
+
+<!-- Query Example of SELECT with arithmatic opperaters -->
+
+ SELECT id,name,(pct + 5) AS new FROM first_year_stu;
+
+<!-- Query Examople of more then one function -->
+
+ SELECT FLOOR(7 + (RAND() * 6));
+
+ <!-- REAL TIME USE OF RANDOM NUMBER -->
+
+ SELECT id,name,pct FROM first_year_stu ORDER BY RAND();
+
+
+
+
+                     <!-- STRING -->
+
+
+ <!-- ########### MySQL String Functions SQL # 30 ########## -->
+
+There are 28 type of string function are as follows.
+
+<!-- 1. UPPER() / UCASE() -->
+
+The UPPER() / UCASE() function is change the case of data as lower Case.
+<!-- QUERY EXAMPLE --> SELECT id,UPPER/UCASE(name) AS NAME ,pct FROM first_year_stu; 
+
+<!-- 2. LOWER() / LCASE() -->
+
+The LOWER() / LCASE() function is change the case of data as upper Case.
+<!-- QUERY EXAMPLE --> SELECT id,LOWER/LCASE(name) AS NAME ,pct FROM first_year_stu; 
+
+<!-- 3. CHARACTER_LENGTH / CHAR/LENGTH() / LEGTH() -->
+
+The CHARACTER_LENGTH() function return the legth of given variable.
+<!-- QUERY EXAMPLE --> SELECT id,name,CHARACTER_LENGTH/CHAR_LENGTH/LENGTH(name) AS NAME FROM first_year_stu;
+
+<!-- 4. CONCAT() -->
+
+The CONCAT() Function is use for show two columns in one column.
+<!-- QUERY EXAMPLE --> SELECT id,CONCAT(name, ' ',pct) AS NAME_Pct FROM first_year_stu;
+
+<!-- 5. CONCAT_WS() -->
+The CONCAT_WS() return the Concat data with first string for start of all strings.
+<!-- QUERY EXAMPLE --> SELECT CONCAT_WS('YAHOO','BABA','YOUTUBE','CHANNEL') AS NAME;
+
+                         <!-- TRIM -->
+
+<!-- 6.  TRIM() -->
+
+The TRIM() Function remove the extra spaces from Both Sides of DATA.
+<!-- QUERY EXAMPLE --> SELECT TRIM("   QUADACTS   ") AS Name;
+
+<!-- 7. LTRIM() -->
+
+The LTRIM() Function remove the extra spaces from the LEFT of DATA.
+<!-- QUERY EXAMPLE --> SELECT LTRIM("   QUADACTS   ") AS Name;
+
+<!-- 8. RTRIM() -->
+
+The RTRIM() Function remove the extra spaces from the RIGHT of DATA.
+<!-- QUERY EXAMPLE --> SELECT RTRIM("   QUADACTS   ") AS Name;
+
+<!-- 9. POSITION -->
+
+The POSITION() Function is use for Finde Position of given chrachter from a LONG string.
+<!-- QUERY EXAMPLE --> SELECT POSITION('baba' IN 'Yaho baba is a you tube channal that provide codeing.') AS POS;
+
+<!-- 10. INSTR -->
+
+The INSTR() Function work like a POSITION Function but in this Function we have not IN into the Query.
+<!-- QUERY EXAMPLE --> SELECT POSITION('Yaho baba is a you tube channal that provide codeing.','baba') AS POS;
+
+<!-- 10. LOCATE -->
+
+The LOCATE() Function work like a POSITION Function but in this Function we have three parameter third parameter is location that we find where from in the string. Third parameter is optional. 
+<!-- QUERY EXAMPLE -->  SELECT LOCATE('baba','Yaho baba is a you tube baba channal that provide codeing.',9) AS POS;
 
 
 
