@@ -1310,9 +1310,116 @@ The TIMEDIFF() Function use for take diffrence between time.This Function have t
 <!-- 10. ADDTIME() -->
 The ADDTIME() Function is use Add time into the existing time.This Function have two parameters first is time And Second is Add time.
 <!-- QUERY EXAMPLE --> SELECT ADDTIME('2020-04-12 01:15:23.000001','10:5:12.000005') AS TIME;
- 
 
+<!-- 11. SUBTIME() -->
+The SUBTIME() Function is use Subtract time into the existing time.This Function have two parameters first is time And Second is Subtract time.
+<!-- QUERY EXAMPLE --> SELECT SUBTIME('2020-04-12 01:15:23.000001','10:5:12.000005') AS TIME;
  
+<!-- 12. MAKETIME() -->
+The MAKETIME() Function is use for Making Time.This Function have three Parameters First is Hour Second is Minutes and Third is Seconds.
+<!-- QUERY EXAMPLE --> SELECT MAKETIME(03,15,56) AS Time;
+
+<!-- 13. TIMESTAMP() -->
+The TIMESTAMP() Function is use for return Combine of Date and Time.This Function have two parameters First is Date and Second is Time.
+<!-- QUERY EXAMPLE --> 
+
+<!-- 14. TIME_FORMATE() -->
+The TIME_FORMATE() Function is use for change the formate of SQL.
+<!-- QUERY EXAMPLE --> SELECT TIME_FORMAT('05:15:00','%H') AS Time;
+
+                       <!-- DATE_FORMATE -->
+
+1. Hour %h(01 to 12), %H(00 to 23), %g(1 to 12), %G(0 to 23) 
+2. Minutes %i(00 to 59)
+3. Seconds %s(00 to 59)
+4. Microsecond %f(000000 to 999999)
+5. Meridien %p(AM or PM)
+
+                       <!-- SOME QUERY EXAMPLES -->
+
+1. SELECT TIME_FORMAT('05:15:00','%H %i %s') AS Time;                       
+2. SELECT TIME_FORMAT('05:15:00','%H:%i:%s %p') AS Time;
+3. SELECT TIME_FORMAT('05:15:00','%H:%i:%s%f %p') AS Time;
+
+<!-- 15. TIME_TO_SEC -->
+The TIME_TO_SEC() Function return Second of Given Time or Exesting Time.
+<!-- QUERY EXAMPLE --> SELECT TIME_TO_SEC('05:15:00') AS Time;
+
+<!-- 16. SEC_TO_TIME -->
+The SEC_TO_TIME() Function return TIME of Given Seconds.
+<!-- QUERY EXAMPLE --> SELECT SEX_TO_TIME(234234) AS Time;
+
+
+
+<!-- MySQL ALTER LEC # 139 SQL # 35 -->
+
+<!-- What is ALTER -->
+
+ALTER Command is use for Table Modify. This Command is use for change name of column, use for change datatype of column, use for change the name of the column, use for recordering of the columns.
+
+## Features of ALTER Command.
+
+> Add Column in a table
+> Changeing Data Type of a Column
+> Change Column Name
+> Adding Constrints to a Column
+> Change Column Position
+> Delete Column
+> Renaming Tables
+
+                            <!-- ALTER Syntax -->
+
+<!-- Syntax For add new Column in a Exiting Column -->
+ALTER COMMAND table_name
+ADD column_name Datatype;
+<!-- Query Example -->
+ALTER TABLE web_stu
+ADD Email VARCHAR(255);
+
+
+<!-- Syntax For Modify datatpe of Column  -->
+ALTER COMMAND table_name
+MODIFY Column_name datatype;
+<!-- Query Example --> ALTER TABLE web_stu MODIFY Email INT(20);
+
+
+<!-- Syntax For Delete Column  -->
+ALTER COMMAND table_name
+DROP COLUMN Column_name datatype;
+<!-- Query Example --> ALTER TABLE web_stu DROP Email_Id;
+
+
+<!-- Syntax For rename Column -->
+ALTER COMMAND table_name
+CHANGE Column_name New_name datatype Constrant;
+<!-- Query Example --> ALTER TABLE web_stu CHANGE Email Email_Id VARCHAR(255) UNIQUE;
+
+<!-- Syntax for Rename Table -->
+ALTER COMMAND table_name
+RENAME new_table_name; 
+<!-- Query Example --> ALTER TABLE web_stu RENAME WEB_LACTURER;
+
+
+<!-- Syntax for reordering of new Column or Exist columnn -->
+ALTER COMMAND table_name
+MODIFY Column_name datatype
+AFTER column_name;
+<!-- Query Example --> ALTER TABLE web_stu MODIFY Email VARCHAR(255) AFTER name;
+
+
+<!-- Syntax for Add Restrection for a Existing Column. -->
+ALTER TABLE table_name
+ADD Restrection (Column_name);
+<!-- Query Example --> ALTER TABLE web_stu ADD UNIQUE(Email);
+
+
+Solution jo data 1 ka bad 5 wali id a jate ha.
+ALTER TABLE table_name
+AUTO_INCREMENT = number where you want to start.
+<!-- Query Example  --> ALTER TABLE web_student AUTO_INCREMENT = 6;
+
+
+
 
 
 
