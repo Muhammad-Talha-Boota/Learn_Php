@@ -1425,7 +1425,78 @@ AUTO_INCREMENT = number where you want to start.
 <!-- DROP COMMAND -->
 The DROP Command is use for Delet all data and also table.
 <!-- Syntax --> DROP TABLE table_name;
+<!-- QUERY EXAMPLE --> DROP TABLE quad;
 
 <!-- TRUNCATE COMMAND -->
 The TRUNCATE Command is use for empty the table.This Command Delete all data of this table.
 <!-- Syntax --> TRUNCATE TABLE table_name;
+<!-- QUERY EXAMPLE --> TRUNCATE TABLE quad;
+
+
+
+<!--MySQL VIEW LEC # 141 SQL # 37 -->
+
+VIEW Comamnd is use for Save Some Createcal Query in SQL. This Command also use for some Lengthy Quers.We Create any Query with the help of create VIEW, Update it also Delete the view.
+
+<!-- VIEW Syntax -->
+CREATE view_name
+AS Query_name. 
+<!-- Query Example -->
+CREATE VIEW SCD AS SELECT id,name,corsename FROM first_year_stu a INNER JOIN course_n b ON a.course = b.coid;
+
+<!-- UPDATE VIEW Syntax -->
+ALTER VIEW
+AS Query_name;
+  or
+CREATE OR REPLACE VIEW
+AS Query_name;
+<!-- Query Example -->
+ALTER VIEW scd AS SELECT id,name,cityname,corsename FROM first_year_stu a JOIN city b ON a.city = b.cid JOIN course_n c ON a.course = c.coid;
+
+<!-- RENAME VIEW Syntax -->
+RENAME TABLE view_name(old) to view_name(new);
+<!-- Query Example --> RENAME TABLE scd to student_data_course;
+
+<!-- DELETE VIEW Syntax -->
+DROP VIEW view_name;
+<!-- Query Example --> DROP VIEW student_data_course;
+
+<!-- Advantages Of VIEW: -->
+> Simplify Complax Query.
+> Provides Extra Layer of Security.
+
+<!-- Disadvantages Of VIEW: -->
+> Performance Decreases
+> Dependency on Table.
+
+
+<!--MySQL INDEX LEC # 142 SQL # 38 -->
+
+ایس کیو ایل انڈیکس کو ڈیٹا بیس سے بہت تیزی سے ڈیٹا حاصل کرنے کے لیے استعمال کیا جاتا ہے۔ ٹیبل یا ویو کو انڈیکس کرنا، بلا شبہ، سوالات اور ایپلیکیشنز کی کارکردگی کو بہتر بنانے کے بہترین طریقوں میں سے ایک ہے۔ ایس کیو ایل انڈیکس وہ ریکارڈ تلاش کرنے کے لیے ایک فوری تلاش کی میز ہے جو صارفین کو اکثر تلاش کرنے کی ضرورت ہوتی ہے۔
+
+
+
+<!-- INDEX syntax -->
+CREATE index_name ON table_name(column1,column2,column3,.......) 
+<!-- Query Example --> CREATE INDEX studdob ON first_year_stu (age);
+
+
+<!-- Syntax for Delete Index -->
+DROP INDEX index_name ON table_name;
+<!-- Query Example --> DROP INDEX studdob ON first_year_stu;
+
+<!-- Query for Find How Many index on our Table -->
+SHOW INDEX FROM table_name;
+
+
+
+
+<!-- INDEX syntax For DROP Index -->
+DROP INDEX index_name ON table_name;
+
+Guideline of INDEX:
+> Automatically Create the index for PRIMARY KEY and UNIQE columns
+> Index columns that you Frequently use to retrieve the data.
+> Index columns that are used for joins to improve join performance.
+> Avoid columns that contain too many null values.
+> Small tables do not require INDEXES.
