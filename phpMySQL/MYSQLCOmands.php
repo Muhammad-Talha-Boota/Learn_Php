@@ -1420,7 +1420,12 @@ AUTO_INCREMENT = number where you want to start.
 
 
 
+<!-- MySQL DROP & TRUNCATE Table LEC # 140 SQL # 36 -->
 
+<!-- DROP COMMAND -->
+The DROP Command is use for Delet all data and also table.
+<!-- Syntax --> DROP TABLE table_name;
 
-
-
+<!-- TRUNCATE COMMAND -->
+The TRUNCATE Command is use for empty the table.This Command Delete all data of this table.
+<!-- Syntax --> TRUNCATE TABLE table_name;
