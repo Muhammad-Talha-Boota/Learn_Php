@@ -1370,7 +1370,7 @@ ALTER Command is use for Table Modify. This Command is use for change name of co
                             <!-- ALTER Syntax -->
 
 <!-- Syntax For add new Column in a Exiting Column -->
-ALTER COMMAND table_name
+ALTER TABLE table_name
 ADD column_name Datatype;
 <!-- Query Example -->
 ALTER TABLE web_stu
@@ -1378,30 +1378,30 @@ ADD Email VARCHAR(255);
 
 
 <!-- Syntax For Modify datatpe of Column  -->
-ALTER COMMAND table_name
+ALTER TABLE table_name
 MODIFY Column_name datatype;
 <!-- Query Example --> ALTER TABLE web_stu MODIFY Email INT(20);
 
 
 <!-- Syntax For Delete Column  -->
-ALTER COMMAND table_name
+ALTER TABLE table_name
 DROP COLUMN Column_name datatype;
 <!-- Query Example --> ALTER TABLE web_stu DROP Email_Id;
 
 
 <!-- Syntax For rename Column -->
-ALTER COMMAND table_name
+ALTER TABLE table_name
 CHANGE Column_name New_name datatype Constrant;
 <!-- Query Example --> ALTER TABLE web_stu CHANGE Email Email_Id VARCHAR(255) UNIQUE;
 
 <!-- Syntax for Rename Table -->
-ALTER COMMAND table_name
+ALTER TABLE table_name
 RENAME new_table_name; 
 <!-- Query Example --> ALTER TABLE web_stu RENAME WEB_LACTURER;
 
 
 <!-- Syntax for reordering of new Column or Exist columnn -->
-ALTER COMMAND table_name
+ALTER TABLE table_name
 MODIFY Column_name datatype
 AFTER column_name;
 <!-- Query Example --> ALTER TABLE web_stu MODIFY Email VARCHAR(255) AFTER name;
