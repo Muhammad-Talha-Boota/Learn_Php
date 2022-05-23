@@ -25,5 +25,5 @@ IN Short In this Tutorial we Create User Update User and Dalete User.
 And All Code File Path in Admin Folder.
 
 
-Working Path For this Tuotorial:  http://localhost/news_prj/admin/users.php
+Working Path that we describe in Lac # 149 For this Tuotorial:  http://localhost/news_prj/admin/users.php
 
