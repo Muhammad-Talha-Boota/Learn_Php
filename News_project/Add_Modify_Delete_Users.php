@@ -23,3 +23,7 @@ we use md5() Function for Password Variable protection.
 
 IN Short In this Tutorial we Create User Update User and Dalete User. 
 And All Code File Path in Admin Folder.
+
+
+Working Path For this Tuotorial:  http://localhost/news_prj/admin/users.php
+
