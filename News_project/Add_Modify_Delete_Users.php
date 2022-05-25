@@ -27,3 +27,14 @@ And All Code File Path in Admin Folder.
 
 Working Path that we describe in Lac # 149 For this Tuotorial:  http://localhost/news_prj/admin/users.php
 
+
+
+
+
+
+
+
+
+
+
+
