@@ -3,7 +3,7 @@
 
 This is 2nd tutorial of News Project.
 
-In this Tutorial we learn about Add Modify And Delete the Users.
+In this Tutorial we learn about Add Modify And Delete Users.
 
 First we Work in the user.php file 
 
