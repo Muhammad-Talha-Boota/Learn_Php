@@ -29,7 +29,9 @@ Working Path that we describe in Lac # 149 For this Tuotorial:  http://localhost
 
 
 
+After That we Do same Workin for Category madole.
 
+In Cetagory Madole we create add Category With Pagination modify category and Also Delete Category.
 
 
 
