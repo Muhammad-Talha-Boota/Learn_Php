@@ -148,4 +148,18 @@ onlay Admin See All Post. Users Only see Here on Post.
 
 So we Learn these Code in the News_prj 5th tutorial.
 And Very Next Tutorial we Learn About Edit And Delete Post........
-                
+
+
+    <!-- PHP News Project - Update & Delete Post Lac # 153 -->
+
+    IN this Tutorial we Code For Update And delete Post. First we Work For Update post When we click On Update Button its genrate A update File with Selected id and categegory_id. By this Id we update the data. And Also Update and Delete the NO of post in the category table. 
+
+    For Update we have Another File in this tutorial we have an other file for update and Code for update in save_update_post.php 
+
+    C:\xampp\htdocs\news_prj\admin\save-post.php
+    C:\xampp\htdocs\news_prj\admin\delete-post.php
+    C:\xampp\htdocs\news_prj\admin\update-post.php
+    C:\xampp\htdocs\news_prj\admin\save_update_post.php
+
+    This Is All Location File For the update and Delete post.
+    
