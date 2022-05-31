@@ -730,7 +730,7 @@ HAVING Clause is the short form of where clause and always use with group by.
 
 <!-- SELECT with GROUP BY & HAVING syntax -->
 
-SELECT columns FROm table_name GROUP BY column1_name(s) HAVING condition;
+SELECT columns FROM table_name GROUP BY column1_name(s) HAVING condition;
 
 
 <!-- QUREE Example of GROUP BY & HAVING syntax -->

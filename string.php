@@ -220,7 +220,7 @@ echo strpbrk($ali , 'Io');
 ############# String substr Function ############
 
 /*
-//// substr() Function stand for substring its use for Take sub values of a variable it have three parameters First is dtring name, second is starting point and third is End Point.
+//// substr() Function stand for substring its use for Take sub values of a variable it have three parameters First is string name, second is starting point and third is End Point.
 
 $data = "Hello world. The world is nice.";
 

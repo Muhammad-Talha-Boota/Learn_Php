@@ -160,6 +160,6 @@ And Very Next Tutorial we Learn About Edit And Delete Post........
     C:\xampp\htdocs\news_prj\admin\delete-post.php
     C:\xampp\htdocs\news_prj\admin\update-post.php
     C:\xampp\htdocs\news_prj\admin\save_update_post.php
-
+ 
     This Is All Location File For the update and Delete post.
     

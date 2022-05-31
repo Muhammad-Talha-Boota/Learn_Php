@@ -85,3 +85,11 @@ if (isset($_SESSION['u_name'])) {
     header("Location: {$hostname}/admin/post.php");
 }
 ?>
+
+
+
+
+<!-- Secure File. -->
+
+
+For Secure Any Folder we create index file and in this File we Code that "File Not found".
