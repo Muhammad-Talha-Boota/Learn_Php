@@ -1,5 +1,7 @@
 <?php
 
+// Switch Case is Use For Create an Case Whos Genate one Case from the Following Match Case.
+
 /* $weekday = 8;
 
 switch($weekday){
