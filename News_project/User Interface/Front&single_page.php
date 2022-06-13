@@ -117,3 +117,12 @@ switch ($page) {
 
 <!-- PHP News Project - Website Setting Page Lac # 161 -->
 
+In this Tutorial we learn About Dinamic Header & footer. For this We Create An File in Admin Folder with the Name of Setting.php And Start Working.
+
+We Have Same Code From the post.php file And Also have Same Code For update the Header And Footer From the Save Update post From the Save_update_post.php In the save_settings.php. And After That we Set Dynamic Header and Footer in the News_site. 
+
+
+We Code for the Setting in the setting.php and save_settings.php File.
+
+
+
