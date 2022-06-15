@@ -125,4 +125,74 @@ We Have Same Code From the post.php file And Also have Same Code For update the 
 We Code for the Setting in the setting.php and save_settings.php File.
 
 
+<!-- PHP News Project - Issues & Tips Page Lac # 162 -->
+
+In this Tutorial We learn About News Project Resolve Isshes and Tips. 
+
+We Discus About Some Major issues that We Face in this Project And Also Some Tips For News Project.
+                                  <!-- Issue -->
+                                  
+<!-- 1st Issue -->
+
+First issue for post Update Category When the User Update the Category in the Category Console the Number of update Post Not Work.  So For Solve this Issue First We create A Hidden Input Field with 'old_category' name in the
+Updte_post.php File and Then we Code For Update category. We Have An Condetion For Hidden Input. Are As Follow. 
+
+<!-- code Example -->
+
+if ($_POST['old_category'] != $_POST['category']) {
+    $sql .= "UPDATE category SET post = post - 1 WHERE category_id = {$_POST['old_category']};";
+    $sql .= "UPDATE category SET post = post + 1 WHERE category_id = {$_POST['category']};";
+}
+
+<!-- 2nd Issue -->
+
+Second issue is Edit post for other user of Admin Pannal. If any user type post id on the url then user update the Post Of the Admin post Are any other User Post. That Against to Security. Private policy. 
+
+For Solve this issue we Working In update_post.php file in the Start of this file we an An condition that if the Role on login User Is 0 Mean user then he Can"t change the other one Post.
+
+<!-- code Example -->
+
+if ($_SESSION['u_role'] == 0) {
+    include "config.php";
+    $p_id = $_GET['id'];
+    $sql2 = "SELECT author FROM post WHERE post_id = {$p_id}";
+    $result2 = mysqli_query($conn, $sql2);
+    $row2 = mysqli_fetch_assoc($result2);
+
+    if ($row2['author'] != $_SESSION['u_id']) {
+        header("Location: {$hostname}/admin/post.php");
+    }
+}
+
+
+<!-- 3nd Issue -->
+
+Third Issue is upload image For post When we Upload Same Name Image of already Existing image Name This over Ride The First one Image. For This Problem We Upload And Updare Image With The Time Function By this Step Image Save or update With time There for Here is No any Problem That we Face.
+
+we Code in save_post.php And update_save_post.php Files.
+
+<!-- Code Example. -->
+$new_name = time() . "-" . basename($file_name);
+    $target = "upload/".$new_name;
+    $image_name = $new_name;
+
+    if(empty($errors) == true){
+        move_uploaded_file($file_tmp,$target);
+    }else{
+        print_r($errors);
+        die();
+    }
+
+
+
+                                    <!-- Tips -->
+
+<!-- 1st pagination index num  -->
+
+First Tip is We Add Sequnce num from 1 to so on In the all pagination We have offset in $i Variable and Encrement of one in this. After While loop.
+
+<!-- code Example -->
+
+$p_id = $_GET['id'];
+$i++;
 
